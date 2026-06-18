@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Image from "next/image";
 import Butterfly from "@/components/Butterfly";
+import { LOGO_SRC } from "@/lib/logo";
 
 const lashServices = [
   "Lash Extension",
@@ -75,13 +75,12 @@ export default function Home() {
         <Butterfly className="absolute bottom-24 left-1/4 w-4 h-4 text-white/10 rotate-45" />
 
         <div className="mx-auto max-w-6xl px-6 py-20 md:py-32 text-center relative z-10">
-          <Image
-            src="/logo.png"
+          <img
+            src={LOGO_SRC}
             alt="Heavy Blink Co."
             width={180}
             height={180}
             className="mx-auto mb-6 drop-shadow-2xl"
-            priority
           />
           <h1 className="font-[family-name:var(--font-script)] text-4xl md:text-6xl text-white leading-tight">
             Elevate Your Beauty

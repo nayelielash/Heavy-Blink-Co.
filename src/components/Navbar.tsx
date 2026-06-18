@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
+import { LOGO_SRC } from "@/lib/logo";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-purple-100">
       <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-3">
-          <Image src="/logo.png" alt="Heavy Blink Co." width={50} height={50} className="h-12 w-auto" />
+          <img src={LOGO_SRC} alt="Heavy Blink Co." width={50} height={50} className="h-12 w-auto" />
           <div className="hidden sm:block">
             <span className="text-xl font-semibold tracking-tight text-dark-800">
               Heavy Blink Co.
