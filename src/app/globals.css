@@ -1,0 +1,34 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-blush-50: #FFF5F6;
+  --color-blush-100: #FFE8EC;
+  --color-blush-200: #FFCDD5;
+  --color-blush-300: #F4A7BB;
+  --color-blush-400: #E8899E;
+  --color-blush-500: #D4687F;
+  --color-blush-600: #B84D64;
+  --color-blush-700: #9A3A50;
+
+  --color-cream-50: #FFFDF9;
+  --color-cream-100: #FFF9F0;
+  --color-cream-200: #FFF3E0;
+
+  --color-warm-800: #3D2C2E;
+  --color-warm-600: #6B5557;
+  --color-warm-400: #8B7E80;
+  --color-warm-200: #D4CCCD;
+  --color-warm-100: #EDE8E9;
+
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--color-cream-50);
+  color: var(--color-warm-800);
+}
+
+html {
+  scroll-behavior: smooth;
+}
