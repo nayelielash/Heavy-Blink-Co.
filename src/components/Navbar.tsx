@@ -1,24 +1,31 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="sticky top-0 z-50 bg-cream-50/80 backdrop-blur-md border-b border-warm-100">
-      <div className="mx-auto max-w-6xl px-6 py-4 flex items-center justify-between">
-        <Link href="/" className="text-2xl font-semibold tracking-tight text-warm-800">
-          Heavy Blink Co.
+    <nav className="sticky top-0 z-50 bg-white/90 backdrop-blur-md border-b border-purple-100">
+      <div className="mx-auto max-w-6xl px-6 py-3 flex items-center justify-between">
+        <Link href="/" className="flex items-center gap-3">
+          <Image src="/logo.png" alt="Heavy Blink Co." width={50} height={50} className="h-12 w-auto" />
+          <div className="hidden sm:block">
+            <span className="text-xl font-semibold tracking-tight text-dark-800">
+              Heavy Blink Co.
+            </span>
+            <p className="text-[10px] text-purple-500 italic -mt-0.5">Eyes that stop the room</p>
+          </div>
         </Link>
 
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden p-2 rounded-lg hover:bg-blush-50 transition"
+          className="md:hidden p-2 rounded-lg hover:bg-purple-50 transition"
           aria-label="Toggle menu"
         >
-          <svg className="w-6 h-6 text-warm-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <svg className="w-6 h-6 text-dark-800" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             {open ? (
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
@@ -33,7 +40,7 @@ export default function Navbar() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-warm-100 bg-cream-50 px-6 py-4 flex flex-col gap-4">
+        <div className="md:hidden border-t border-purple-100 bg-white px-6 py-4 flex flex-col gap-4">
           <NavLinks onClick={() => setOpen(false)} />
         </div>
       )}
@@ -56,7 +63,7 @@ function NavLinks({ onClick }: { onClick?: () => void }) {
             key={link.href}
             href={link.href}
             onClick={onClick}
-            className="inline-flex items-center justify-center rounded-full bg-blush-400 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-blush-500"
+            className="inline-flex items-center justify-center rounded-full bg-purple-600 px-6 py-2.5 text-sm font-medium text-white transition hover:bg-purple-700 shadow-md shadow-purple-200"
           >
             {link.label}
           </Link>
@@ -65,7 +72,7 @@ function NavLinks({ onClick }: { onClick?: () => void }) {
             key={link.href}
             href={link.href}
             onClick={onClick}
-            className="text-sm font-medium text-warm-600 transition hover:text-blush-500"
+            className="text-sm font-medium text-dark-700 transition hover:text-purple-600"
           >
             {link.label}
           </Link>
